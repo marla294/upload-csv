@@ -6,10 +6,12 @@ namespace UploadCSVFile
 
       public char[] separators = { ',' };
 
+      public string header;
+
       public void IngestDataset(string fileName) 
       {
         StreamReader reader = new StreamReader(fileName);
-        string header = reader.ReadLine();
+        header = reader.ReadLine();
 
         SetColumnMappings(header);
 
@@ -55,7 +57,36 @@ namespace UploadCSVFile
         }
 
         List<Row> sortedOutput = output.OrderBy(row => row.LastName + row.FirstName).ToList();
-        
+
+        System.Text.StringBuilder csv = new System.Text.StringBuilder();
+        csv.AppendLine(header);
+
+        foreach (var row in sortedOutput) {
+          string line = "";
+          
+          for (int column = 0; column < 5; column++) {
+            if (column == mappings.UserId) {
+              line = line + $"{row.UserId},";
+            }
+            if (column == mappings.FirstName) {
+              line = line + $"{row.FirstName},";
+            }
+            if (column == mappings.LastName) {
+              line = line + $"{row.LastName},";
+            }
+            if (column == mappings.Version) {
+              line = line + $"{row.Version},";
+            }
+            if (column == mappings.InsuranceCompany) {
+              line = line + $"{row.InsuranceCompany},";
+            }
+          }
+          line = line.Remove(line.Length - 1, 1);
+          
+          csv.AppendLine(line);
+        }
+
+        File.WriteAllText($"./OutputFiles/{grouping.InsuranceCompany}.csv", csv.ToString());
       }
 
       public Row PopulateRow(string currentLine) {
