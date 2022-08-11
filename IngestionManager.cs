@@ -53,6 +53,8 @@ namespace UploadCSVFile
             output.Add(group.Rows.First());
           }
         }
+
+        List<Row> sortedOutput = output.OrderBy(row => row.LastName + row.FirstName).ToList();
         
       }
 
