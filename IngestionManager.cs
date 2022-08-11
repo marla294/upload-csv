@@ -2,18 +2,35 @@ namespace UploadCSVFile
 {
     public class IngestionManager
     {
+      public ColumnMappings mappings;
+
       public void IngestDataset(string fileName) 
       {
         StreamReader reader = new StreamReader(fileName);
         string header = reader.ReadLine();
 
-        ColumnMappings mappings = GetColumnMappings(header);
+        SetColumnMappings(header);
+
+        List<Row> data = new List<Row>();
+
+        string currentLine;
+
+        while ((currentLine = reader.ReadLine()) != null) {
+          Row row = PopulateRow(currentLine);
+          data.Add(row);
+        }
+
         //string line1Data = reader.ReadLine();
       }
 
-      public ColumnMappings GetColumnMappings(string header) 
+      public Row PopulateRow(string currentLine) {
+        Row row = new Row();
+
+        return row;
+      }
+
+      public void SetColumnMappings(string header) 
       {
-        ColumnMappings mappings = new ColumnMappings();
         char[] separators = { ',' };
         var data = header.Split(separators);
         int column = 0;
@@ -38,8 +55,6 @@ namespace UploadCSVFile
 
           column++;
         }
-
-        return mappings;
       }
     }
 }
