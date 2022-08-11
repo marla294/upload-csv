@@ -2,11 +2,28 @@ namespace UploadCSVFile
 {
     public class IngestionManager
     {
-        public void IngestDataset(string dataSetName) 
+      public void IngestDataset(string fileName) 
+      {
+        StreamReader reader = new StreamReader(fileName);
+        string header = reader.ReadLine();
+
+        ColumnMappings mappings = GetColumnMappings(header);
+        //string line1Data = reader.ReadLine();
+      }
+
+      public ColumnMappings GetColumnMappings(string header) 
+      {
+        ColumnMappings mappings = new ColumnMappings();
+        char[] separators = { ',' };
+        var data = header.Split(separators);
+        int counter = 0;
+
+        foreach (var cell in data) 
         {
-            StreamReader reader = new StreamReader(dataSetName);
-            string header = reader.ReadLine();
-            string line1Data = reader.ReadLine();
+          counter++;
         }
+
+        return mappings;
+      }
     }
 }
