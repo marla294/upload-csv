@@ -16,11 +16,27 @@ namespace UploadCSVFile
         ColumnMappings mappings = new ColumnMappings();
         char[] separators = { ',' };
         var data = header.Split(separators);
-        int counter = 0;
+        int column = 0;
 
         foreach (var cell in data) 
         {
-          counter++;
+          if (cell == "User Id") {
+            mappings.UserId = column;
+          }
+          if (cell == "First Name") {
+            mappings.FirstName = column;
+          }
+          if (cell == "Last Name") {
+            mappings.LastName = column;
+          }
+          if (cell == "Version") {
+            mappings.Version = column;
+          }
+          if (cell == "Insurance Company") {
+            mappings.InsuranceCompany = column;
+          }
+
+          column++;
         }
 
         return mappings;
