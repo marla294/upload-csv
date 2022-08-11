@@ -22,6 +22,12 @@ namespace UploadCSVFile
           data.Add(row);
         }
 
+        var query = data.GroupBy(
+          r => r.InsuranceCompany,
+          r => r,
+          (key, g) => new { InsuranceCompany = key, Rows = g.ToList()}
+        );
+
       }
 
       public Row PopulateRow(string currentLine) {
