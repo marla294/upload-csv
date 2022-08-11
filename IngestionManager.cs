@@ -25,9 +25,35 @@ namespace UploadCSVFile
         var query = data.GroupBy(
           r => r.InsuranceCompany,
           r => r,
-          (key, g) => new { InsuranceCompany = key, Rows = g.ToList()}
+          (key, g) => new Grouping { InsuranceCompany = key, Rows = g.ToList()}
         );
 
+        foreach (var grouping in query) {
+          OutputInsuranceData(grouping);
+        }
+
+      }
+
+      public void OutputInsuranceData(Grouping grouping) {
+        List<Row> output = new List<Row>();
+
+        var query = grouping.Rows.GroupBy(
+          r => r.UserId,
+          r => r,
+          (key, g) => new { UserId = key, Rows = g.ToList() }
+        );
+
+        foreach (var group in query) {
+          if (group.Rows.Count > 1) {
+            var highestVersion = group.Rows.Max(row => row.Version);
+            var row = group.Rows.First(row => row.Version == highestVersion);
+            output.Add(row);
+          }
+          else {
+            output.Add(group.Rows.First());
+          }
+        }
+        
       }
 
       public Row PopulateRow(string currentLine) {
