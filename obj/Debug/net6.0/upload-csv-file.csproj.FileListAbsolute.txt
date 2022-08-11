@@ -1,0 +1,15 @@
+/Users/marlaforeman/Documents/repos/upload-csv-file/bin/Debug/net6.0/upload-csv-file
+/Users/marlaforeman/Documents/repos/upload-csv-file/bin/Debug/net6.0/upload-csv-file.deps.json
+/Users/marlaforeman/Documents/repos/upload-csv-file/bin/Debug/net6.0/upload-csv-file.runtimeconfig.json
+/Users/marlaforeman/Documents/repos/upload-csv-file/bin/Debug/net6.0/upload-csv-file.dll
+/Users/marlaforeman/Documents/repos/upload-csv-file/bin/Debug/net6.0/upload-csv-file.pdb
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.csproj.AssemblyReference.cache
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.AssemblyInfoInputs.cache
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.AssemblyInfo.cs
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.csproj.CoreCompileInputs.cache
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.dll
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/refint/upload-csv-file.dll
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.pdb
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.genruntimeconfig.cache
+/Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/ref/upload-csv-file.dll
