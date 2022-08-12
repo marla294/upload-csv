@@ -13,3 +13,4 @@
 /Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.pdb
 /Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/upload-csv-file.genruntimeconfig.cache
 /Users/marlaforeman/Documents/repos/upload-csv-file/obj/Debug/net6.0/ref/upload-csv-file.dll
+/Users/marlaforeman/Documents/repos/upload-csv-file/bin/Debug/net6.0/sample.csv

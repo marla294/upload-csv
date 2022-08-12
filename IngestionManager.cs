@@ -85,7 +85,7 @@ namespace UploadCSVFile
           
           csv.AppendLine(line);
         }
-
+        Directory.CreateDirectory("./OutputFiles/");
         File.WriteAllText($"./OutputFiles/{grouping.InsuranceCompany}.csv", csv.ToString());
       }
 
